@@ -66,7 +66,7 @@ export default async function CommitteePage() {
             height={120}
             className="w-40 h-20 object-contain"
           />
-          <h1 className="absolute left-1/2 -translate-x-1/2 text-2xl font-bold text-gray-900 text-center">
+          <h1 className=" text-2xl font-bold text-gray-900 text-center">
             AOICON 2026 Committee
           </h1>
         </div>
