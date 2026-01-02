@@ -18,10 +18,10 @@ export default function MemberCard({ name, designation, image }: Props) {
       />
 
       <div className="leading-snug">
-        <p className="text-sm font-bold text-black-900">
+        <p className="text-sm font-bold text-black">
           {name}
         </p>
-        <p className="text-xs font-medium text-black-500">
+        <p className="text-xs font-medium text-black">
           {designation}
         </p>
       </div>
