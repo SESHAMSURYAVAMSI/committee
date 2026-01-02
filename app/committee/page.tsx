@@ -56,21 +56,7 @@ export default async function CommitteePage() {
 
   return (
     <main className="min-h-screen bg-gray-50">
-      {/* HEADER */}
-      <header className="sticky top-0 z-20 bg-white border-b">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center gap-4">
-          <Image
-            src="https://www.aoicon2026kolkata.com/assets/images/logo.png"
-            alt="AOICON 2026"
-            width={120}
-            height={120}
-            className="w-40 h-20 object-contain"
-          />
-          <h1 className=" text-2xl font-bold text-gray-900 text-center">
-            AOICON 2026 Committee
-          </h1>
-        </div>
-      </header>
+
 
       {/* TABS */}
       <div className="max-w-7xl mx-auto px-6 py-10">

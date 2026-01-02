@@ -21,7 +21,7 @@ type Props = {
 export default function CommitteeTabs({ categories = [], data }: Props) {
   const router = useRouter();
 
-  /* ✅ INITIAL STATE (NO EFFECT, NO WARNING) */
+  /* INITIAL ACTIVE CATEGORY */
   const [active, setActive] = useState<string | null>(() => {
     if (typeof window === "undefined") return null;
     if (!categories.length) return null;
@@ -34,7 +34,7 @@ export default function CommitteeTabs({ categories = [], data }: Props) {
     return matched || categories[0];
   });
 
-  /* ✅ LISTEN to hash changes (external system) */
+  /* LISTEN TO HASH CHANGES */
   useEffect(() => {
     if (!categories.length) return;
 
@@ -53,39 +53,15 @@ export default function CommitteeTabs({ categories = [], data }: Props) {
       window.removeEventListener("hashchange", onHashChange);
   }, [categories]);
 
-  /* ✅ Handle click: update React state + URL */
-  function handleCategoryClick(category: string) {
-    const slug = slugify(category);
-    setActive(category);
-    router.replace(`#${slug}`, { scroll: false });
-  }
-
   /* Guard */
   if (!active) return null;
 
   return (
-    <div className="space-y-10">
-      {/* CATEGORY TABS */}
-      <div className="flex flex-wrap gap-3 border-b pb-4">
-        {categories.map(category => {
-          const isActive = active === category;
-
-          return (
-            <button
-              key={category}
-              onClick={() => handleCategoryClick(category)}
-              className={`rounded-full px-5 py-2 text-sm font-semibold transition
-                ${
-                  isActive
-                    ? "bg-orange-500 text-white shadow"
-                    : "bg-gray-100 text-gray-700 hover:bg-orange-50 hover:text-orange-600"
-                }`}
-            >
-              {category}
-            </button>
-          );
-        })}
-      </div>
+    <div className="space-y-6">
+      {/* CATEGORY TITLE */}
+      {/* <h2 className="text-xl font-bold text-gray-900">
+        {active}
+      </h2> */}
 
       {/* ACTIVE CATEGORY CONTENT */}
       <CommitteeGrid

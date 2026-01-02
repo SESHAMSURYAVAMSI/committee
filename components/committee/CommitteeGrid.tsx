@@ -18,9 +18,9 @@ export default function CommitteeGrid({ title, members }: Props) {
           </h2>
         </div>
 
-        <span className="text-sm font-medium text-gray-500">
+        {/* <span className="text-sm font-medium text-gray-500">
           {members.length} Members
-        </span>
+        </span> */}
       </div>
 
       {/* ONE PERSON PER ROW */}
